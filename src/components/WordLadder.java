@@ -39,6 +39,7 @@ public class WordLadder
 		while (!ladderTree.isEmpty())
 		{
 			stk = ladderTree.poll();
+			System.out.println("ladderTree.size = " + ladderTree.size());
 			String last = stk.peek();
 			int len = last.length();
 			for ( int i = 0; i < len; i++)
@@ -48,8 +49,10 @@ public class WordLadder
 				for (char rp = 'a'; rp <= 'z'; rp++)
 				{
 					now.setCharAt(i, rp);
-					if (visited.contains(now)) continue;
-					if (now.equals(end)) {
+					String nows = now.toString();
+					if (visited.contains(nows)) continue;
+					visited.add(nows);
+					if (nows.equals(end)) {
 						String res;
 						Stack<String> tmp = new Stack<String>();
 						while (!stk.empty()) {
@@ -62,10 +65,10 @@ public class WordLadder
 						res += end;
 						return res;
 					}
-						Stack<String> stkcpy = new Stack<String>();
-					       stkcpy	= (Stack<String>) stk.clone();
-						stkcpy.push(now.toString());
-						ladderTree.add(stkcpy);
+					Stack<String> stkcpy = new Stack<String>();
+					stkcpy	= (Stack<String>) stk.clone();
+					stkcpy.push(nows);
+					ladderTree.add(stkcpy);
 				}
 			}
 		}
