@@ -49,6 +49,7 @@ public class WordLadder
 				{
 					now.setCharAt(i, rp);
 					String nows = now.toString();
+					if (!dict.contains(nows)) continue;
 					if (visited.contains(nows)) continue;
 					visited.add(nows);
 					if (nows.equals(end)) {

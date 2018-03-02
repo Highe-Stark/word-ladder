@@ -1,6 +1,8 @@
 Word Ladder
 ===========
 
+## Definition
+
 > Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
 
 > Only one letter can be changed at a time.
@@ -21,3 +23,33 @@ Word Ladder
 > * You may assume no duplicates in the word list.
 > * You may assume beginWord and endWord are non-empty and are not the same.
 cited from https://leetcode.com/problems/word-ladder/description/
+
+## Instruction
+
+1. Download the repository
+
+	git clone https://github.com/Highe-Stark/word-ladder.git  // clone with HTTP
+	git clone git@github.com:Highe-Stark/word-ladder.git  // clone with SSH
+
+2. compile
+
+	cd word-ladder/src/
+	make
+
+3. Run 
+
+	java Entry [-d <path>] [-b <begin word>] [-e <end word>]
+	           
+
+
+## Description
+
+-d <path>
+  the path where the dictionary file is.
+
+-b <begin>
+  the word that the ladder start from.
+
+-e <end>
+  the destination word.
+
