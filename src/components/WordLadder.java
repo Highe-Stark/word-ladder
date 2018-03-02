@@ -39,7 +39,6 @@ public class WordLadder
 		while (!ladderTree.isEmpty())
 		{
 			stk = ladderTree.poll();
-			System.out.println("ladderTree.size = " + ladderTree.size());
 			String last = stk.peek();
 			int len = last.length();
 			for ( int i = 0; i < len; i++)
