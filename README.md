@@ -41,6 +41,13 @@ cited from https://leetcode.com/problems/word-ladder/description/
 		java Entry [-d <path>] [-b <begin word>] [-e <end word>]
 	           
 
+4. Test
+  
+	Modify makefile and test.sh in the component directory, changing "/opt/java/jdk-9.0.4/lib/junit-4.9.jar" to the path where your junit locates.
+
+		cd components
+		make Test
+		./test.sh
 
 ## Description
 

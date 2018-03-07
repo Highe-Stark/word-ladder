@@ -18,6 +18,8 @@ public class WordLadder
 	public WordLadder (String beg, String end, HashSet<String> dict) throws RuntimeException
 	{
 		if (beg == null || end == null || dict == null) throw new NullPointerException("null is not accepted");
+		if (!dict.contains(beg)) throw new IllegalArgumentException(beg + " is not in the dictionary.");
+		if (!dict.contains(end)) throw new IllegalArgumentException(end + " is not in the dictionary.");
 		this.begin = beg;
 		this.end = end;
 		this.dict = dict;
@@ -26,7 +28,8 @@ public class WordLadder
 	public String findLadder()
 	{
 		String notFound = "No word ladder found from " + begin + " to " + end + ".";
-		if (begin.length() != end.length()) return notFound; 
+		if (begin.length() != end.length()) return notFound;
+		if (begin.equals(end)) return begin;
 		// stk for a stack of words
 		Stack<String> stk = new Stack<String>();
 		stk.push(begin);
