@@ -18,7 +18,7 @@ public class WordLadder
 	public WordLadder (String beg, String end, HashSet<String> dict) throws RuntimeException
 	{
 		if (beg == null || end == null || dict == null) throw new NullPointerException("null is not accepted");
-		if (!dict.contains(beg)) throw new IllegalArgumentException(beg + " is not in the dictionary.");
+		// if (!dict.contains(beg)) throw new IllegalArgumentException(beg + " is not in the dictionary.");
 		if (!dict.contains(end)) throw new IllegalArgumentException(end + " is not in the dictionary.");
 		this.begin = beg;
 		this.end = end;

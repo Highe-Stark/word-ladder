@@ -34,7 +34,7 @@ public class WordLadderTest{
 		HashSet<String> dict = new HashSet<String>();
 		Scanner inFile;
 		try {
-			inFile = new Scanner(Paths.get("./dictionary.txt"), "UTF-8");
+			inFile = new Scanner(Paths.get("./resrc/dictionary-2.txt"), "UTF-8");
 		}
 		catch (IOException e) {
 			System.out.println(e.getMessage());
