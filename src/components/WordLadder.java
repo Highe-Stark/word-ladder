@@ -27,7 +27,7 @@ public class WordLadder
 
 	public String findLadder()
 	{
-		String notFound = "No word ladder found from " + begin + " to " + end + ".";
+		String notFound = "There is no word ladder between " + begin + " and " + end;
 		if (begin.length() != end.length()) return notFound;
 		if (begin.equals(end)) return begin;
 		// stk for a stack of words

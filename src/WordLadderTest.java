@@ -1,5 +1,8 @@
+import java.io.*;
+import java.nio.file.Paths;
 import static org.junit.Assert.*;
 import java.util.HashSet;
+import java.util.Scanner;
 import org.junit.Test;
 import components.WordLadder;
 
@@ -24,5 +27,24 @@ public class WordLadderTest{
 		WordLadder wl = new WordLadder("cat", "dog", dict);
 		String res = wl.findLadder();
 		assertEquals("cat -> bat -> bot -> dot -> dog", res);
+	}
+
+	@Test
+	public void testFindLadder3() {
+		HashSet<String> dict = new HashSet<String>();
+		Scanner inFile;
+		try {
+			inFile = new Scanner(Paths.get("./dictionary.txt"), "UTF-8");
+		}
+		catch (IOException e) {
+			System.out.println(e.getMessage());
+			return;
+		}
+		while (inFile.hasNext()) {
+			dict.add(inFile.next());
+		}
+		WordLadder wl = new WordLadder("dears", "fears", dict);
+		String res = wl.findLadder();
+		assertEquals("dears -> fears", res);
 	}
 }
